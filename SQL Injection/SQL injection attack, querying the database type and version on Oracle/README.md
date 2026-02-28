@@ -1,5 +1,5 @@
 # Lab: SQL injection attack, querying the database type and version on Oracle
-![](https://img.shields.io/badge/Difficulty-PRACTITIONER-lightblue)
+![](https://img.shields.io/badge/Difficulty-PRACTITIONER-blue)
 
 **Lab Link:** [https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle)
 
