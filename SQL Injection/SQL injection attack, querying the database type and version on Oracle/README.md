@@ -16,12 +16,14 @@ To solve the lab, display the database version string.
 ### My solution:
 First, I had to see how many columns the original select statement returned (because to use union the returned columns need to be the same amount)
 
-So I injected this query: `/filter?category=NULL' ORDER BY 1--`
+So I injected this query: `/filter?category=NULL' UNION SELECT NULL-- .`
 
-Then I incremented `ORDER BY 1` to `ORDER BY 2` and so on until I got an error message.
+And I added 1 more `NULL` to the select statement until I got an error
 
-I got an error on `ORDER BY 3` and this showed me that 2 columns were being returned by the original query.
+I got an error at 3 `NULL`s >>> `/filter?category=NULL' UNION SELECT NULL, NULL, NULL-- .`
 
-So I crafted this query to solve the lab, it selects the **BANNER** column which has the information we need, and I added **NULL** as the second column because **NULL** supports almost all data types
-`/filter?category=NULL' UNION ALL SELECT BANNER, NULL FROM v$version--`
+This showed me that the original query returned 2 columns
 
+Finally, I solved the lab by crafting and injecting this:
+`NULL' UNION SELECT NULL, @@version-- .`
+(There is a dot after the double dash on all injections, because Microsoft DB and MySQL both expect a space or a control character after the two dashes)
