@@ -1,7 +1,7 @@
 # Lab: SQL injection attack, listing the database contents on non-Oracle databases
 ![](https://img.shields.io/badge/Difficulty-PRACTITIONER-blue)
 
-**Lab Link:** [https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle)
+**Lab Link:** [https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle)
 
 ---
 
