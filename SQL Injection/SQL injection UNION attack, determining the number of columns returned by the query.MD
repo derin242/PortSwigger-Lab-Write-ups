@@ -13,9 +13,9 @@ To solve the lab, determine the number of columns returned by the query by perfo
 
 ### My solution:
 
-I crafted and injected this payload to see how many rows are being returned by the original query:
+I crafted and injected this payload to see how many columns are being returned by the original query:
 `/filter?category=NULL' ORDER BY 1--` and I incremented 1 until I got an error.
-I got an error at ORDER BY 4 so the original query returns 3 rows.
+I got an error at ORDER BY 4 so the original query returns 3 columns.
 
 Then I crafted this payload to solve the lab:
 `/filter?category=' UNION ALL SELECT NULL, NULL, NULL--`
