@@ -14,11 +14,15 @@ The lab will provide a random value that you need to make appear within the quer
 ### My solution:
 
 I start by determining the number of columns returned again
+
 `/filter?category=NULL' ORDER BY 1-- ` Increment by 1 until I got an error
+
 Got an error at 4, so the original query returns 3 columns.
 
 
 The next step is to identify a column that is compatible with string data.
 I tried retrieving the table name so that I could check the columns but that did not work so I had no option but to brute force it.
+
 `/filter?category=NULL' UNION ALL SELECT NULL, 'hM7ZT6', NULL--`
+
 I placed the string in the 1st, 2nd, and 3rd position until I found the correct position, it was the 2nd position.
