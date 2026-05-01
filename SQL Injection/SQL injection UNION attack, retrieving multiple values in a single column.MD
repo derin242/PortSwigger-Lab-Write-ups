@@ -28,7 +28,9 @@ Then I crafted this payload to return all info in a single column:
 It returned:
 
 wiener po5s4emb64oaxzktcfdp
+
 administrator ly7rqc1xoqfwpcomhn4b
+
 carlos dvzsk4b6324r9093mz84
 
 I logged in as administrator with the credentials to finish the lab.
