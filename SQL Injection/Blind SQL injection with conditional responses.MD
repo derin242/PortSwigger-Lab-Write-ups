@@ -65,7 +65,7 @@ I went back to finding the characters
 
 7th character was `j`
 
-This got tiring so I used a sniper attack to iterate through a alphanumerical wordlist on the injection `Cookie: TrackingId=WRoteoKHjdPtLAQ2' AND SUBSTRING((SELECT password FROM users WHERE username = 'administrator'), 7, 1) = 'variable;` and pause the attack when the response includes the string `welcome`. I started the attack then manually iterated to the next character (here it was 7, so i changed it to 8 to find the next char) and started the next one, since burpsuite automatically assigns numbers to attacks, I could keep track of which attack found which character at what position.
+This got tiring so I used a sniper attack to iterate through a alphanumerical wordlist on the injection `Cookie: TrackingId=WRoteoKHjdPtLAQ2' AND SUBSTRING((SELECT password FROM users WHERE username = 'administrator'), 7, 1) = 'variable;` and pause the attack when the response includes the string `welcome`. I started the attack and put it in the background and while it's brute forcing, i manually iterated to the next character (here it was 7, so i changed it to 8 to find the next char) and started the next one, since burpsuite automatically assigns numbers to attacks, I could keep track of which attack found which character at what position even though I had around 13 (attack) tabs open.
 
 The full password: `4uwv8wjee1phmdgrqto4`
 
