@@ -41,7 +41,7 @@ It does not actually wait for a 1000 seconds though, so I think there is a syste
 
 Password: `qzh4js0hqdv73h6s6pgf`
 
-After reviewing the solution for the lab I found out that I should also use this setting in intruder for more precise results:
+After reviewing the official solution for the lab, I found out that I should also use this setting in intruder for more precise results:
 <img width="300" height="450" alt="image" src="https://github.com/user-attachments/assets/1ebf8ef6-bf42-4014-a157-ef9f588e281d" />
 
 This setting is used to:
