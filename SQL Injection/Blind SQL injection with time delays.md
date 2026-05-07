@@ -1,4 +1,4 @@
-# Lab: Blind SQL injection with time delays.md
+# Lab: Blind SQL injection with time delays
 ![](https://img.shields.io/badge/Difficulty-PRACTITIONER-blue)
 
 **Lab Link:** [https://portswigger.net/web-security/sql-injection/blind/lab-time-delays](https://portswigger.net/web-security/sql-injection/blind/lab-time-delays)
