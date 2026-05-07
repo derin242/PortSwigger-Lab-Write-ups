@@ -40,3 +40,8 @@ And when we get the response:
 It does not actually wait for a 1000 seconds though, so I think there is a system in place to stop that from happening, but it still waits a significant amount of time enough for me to identify a match. I wanted it to be more accurate though so I set it to 100 seconds instead.
 
 Password: `qzh4js0hqdv73h6s6pgf`
+
+After reviewing the solution for the lab I found out that I should also use this setting in intruder for more precise results:
+<img width="652" height="924" alt="image" src="https://github.com/user-attachments/assets/1ebf8ef6-bf42-4014-a157-ef9f588e281d" />
+
+I tested it, and instead of having multiple requests taking longer than usual, I only had 1 request take longer, which made identification way easier. I will keep this in mind for future labs.
