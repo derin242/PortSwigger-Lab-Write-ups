@@ -42,6 +42,9 @@ It does not actually wait for a 1000 seconds though, so I think there is a syste
 Password: `qzh4js0hqdv73h6s6pgf`
 
 After reviewing the solution for the lab I found out that I should also use this setting in intruder for more precise results:
-<img width="652" height="924" alt="image" src="https://github.com/user-attachments/assets/1ebf8ef6-bf42-4014-a157-ef9f588e281d" />
+<img width="300" height="450" alt="image" src="https://github.com/user-attachments/assets/1ebf8ef6-bf42-4014-a157-ef9f588e281d" />
+
+This setting is used to:
+>Limit the number of requests that the attack sends simultaneously. This is useful so you don't overload the target server or exceed the configured rate limit.
 
 I tested it, and instead of having multiple requests taking longer than usual, I only had 1 request take longer, which made identification way easier. I will keep this in mind for future labs.
