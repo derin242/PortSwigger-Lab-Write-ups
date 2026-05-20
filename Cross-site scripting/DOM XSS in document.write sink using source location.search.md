@@ -14,4 +14,6 @@ To solve this lab, perform a cross-site scripting attack that calls the alert fu
 Quick testing shows me that the website injects the query into an image tag
 <img width="1023" height="303" alt="image" src="https://github.com/user-attachments/assets/9975f910-0965-45cb-ad3a-df9d7e1e7bb6" />
 
-I solved the lab by injecting `" onerror='alert(1)'` to break out of the string and inject the alert function.
+I injected `" onerror='alert(1)'` to break out of the string and inject the alert function and it worked but the lab wasn't solved so I figured it wanted me to do it another way.
+
+So I broke out of the img tag using `"><script>alert(1)</script>` and the lab was solved.
